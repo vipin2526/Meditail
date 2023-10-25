@@ -5,6 +5,8 @@ function App() {
     <div className="App text-center">
       Welcome to Meditail
       I am Shivendra.
+      Hii 
+      from VS code
     </div>
   ); 
 }
