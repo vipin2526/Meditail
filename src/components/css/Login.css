@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.login_body {
+    background-size: cover;
+    backdrop-filter: blur(0px);
+    display: flex;
+    height: 627px;
+}
+
+form {
+    text-align: center;
+}
+
+.login-container {
+    display: relative;
+    border: 1px solid rgb(0 0 0);
+    border-radius: 20px;
+    height: 430px;
+    width: 400px;
+    margin: auto;
+    margin-top: 100px;
+    background-color: rgba(202, 202, 202, 0.511);
+    padding-top: 30px;
+    /* opacity: 0.4;  using this is not good use backdrop-filter */
+    backdrop-filter: blur(20px)
+}
+
+form {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-container button {
+    margin-top: 30px;
+    border: 2px solid black;
+    border-radius: 25px;
+    height: 40px;
+    width: 80%;
+    font-size: large;
+}
+
+.line {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 20px;
+    font-size: large;
+}
+
+form>input {
+    display: flex;
+    border: none;
+    height: 40px;
+    border-bottom: 2px solid black;
+    width: 80%;
+    margin-top: 25px;
+    background-color: transparent;
+    font-size: 16px;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+    background: transparent;
+}
+
+.register-line {
+    font-size: large;
+    padding-top: 10px;
+}
+
+a {
+    color: black;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#signup>input {
+    margin-top: 18px;
+}
+
+
+
+.login {
+    background: linear-gradient(to right, red, rgb(31, 173, 31));
+    /* background-image: url(/public/images/s3_back.jpg); */
+    background-size: cover;
+}
+
+.login_page input {
+    height: 30px;
+    border-radius: 5px;
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+}
+
+.login_page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
