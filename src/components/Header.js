@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './css/Header.css'
+import islogin from './js/islogin'
 export default function Header() {
   return (
     <div className='header'>
@@ -10,6 +11,9 @@ export default function Header() {
         <li><Link to={'/treatments'}>TREATMENTS</Link></li>
         <li><Link to={'/hospital'}>HOSPITAL</Link></li>
         <li><Link to={'/services'}>SERVICES</Link></li>
+       {
+        (islogin())?(<li>Hello</li>) : (<li>Login</li>)
+       }
       </ul>
     </div>
   )
