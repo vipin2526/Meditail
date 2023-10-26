@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './css/Header.css'
 import islogin from './js/islogin'
+import icon from '../asset/icon.jpg'
 export default function Header() {
   return (
     <div className='header'>
@@ -12,7 +13,7 @@ export default function Header() {
         <li><Link to={'/hospital'}>HOSPITAL</Link></li>
         <li><Link to={'/services'}>SERVICES</Link></li>
        {
-        (islogin())?(<li>Hello</li>) : (<li>Login</li>)
+        (islogin())?(<li> <img src={icon} className='icon'/>  </li>) : (<li><Link to={'/login'}>LOGIN </Link></li>)
        }
       </ul>
     </div>

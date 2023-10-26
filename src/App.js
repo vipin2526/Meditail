@@ -17,16 +17,17 @@ function App() {
 
 
 
-      <Router>
+      <Router >
         <Header />
-        <Routes>
+        <div className='margin'>
+        <Routes >
           <Route path='/' element={<LandingPage />} />
           <Route path='/treatments' element={<Treatments />} />
           <Route path='/hospital' element={<Hospital />} />
           <Route path='/services' element={<Services />} />
           <Route path='/login' element={<Login />} />
           <Route path='/registration' element={<Registration />} />
-        </Routes>
+        </Routes></div>
       </Router>   
     </div>
   );
