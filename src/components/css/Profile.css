@@ -1,0 +1,7 @@
+.profileBox {
+    display: block;
+}
+
+.profileIcon>img{
+    border-radius: 100%;   
+}
