@@ -9,14 +9,12 @@ import Hospital from './components/Hospital';
 import Header from './components/Header';
 import Login from './components/Login';
 import Registration from './components/Registration';
+import Profile from './components/Profile';
 
 
 function App() {
   return (
     <div className="App">
-
-
-
       <Router >
         <Header />
         <div className='margin'>
@@ -27,6 +25,7 @@ function App() {
           <Route path='/services' element={<Services />} />
           <Route path='/login' element={<Login />} />
           <Route path='/registration' element={<Registration />} />
+          <Route path='/profile' element={<Profile />} />
         </Routes></div>
       </Router>   
     </div>
