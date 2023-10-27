@@ -7,3 +7,17 @@
 .margin{
   margin-top: 90px;
 }
+.listofhospitals{
+  height: 70vh;
+  width: 40vw;
+  background-color: brown;
+  color :white;
+  display: inline-block;
+  padding: 5vw;
+}
+.map{
+  height: 70vh;
+  width: 40vw;
+  float: right;
+  padding: 5vw;
+}

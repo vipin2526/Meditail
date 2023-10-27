@@ -9,6 +9,7 @@ import Hospital from './components/Hospital';
 import Header from './components/Header';
 import Login from './components/Login';
 import Registration from './components/Registration';
+ 
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/registration' element={<Registration />} />
         </Routes></div>
+ 
       </Router>   
     </div>
   );

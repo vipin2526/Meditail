@@ -13,7 +13,7 @@ export default function Header() {
         <li><Link to={'/hospital'}>HOSPITAL</Link></li>
         <li><Link to={'/services'}>SERVICES</Link></li>
        {
-        (islogin())?(<li> <img src={icon} className='icon'/>  </li>) : (<li><Link to={'/login'}>LOGIN </Link></li>)
+        (islogin())?(<li> <img src={icon} className='icon' alt="icon"/>  </li>) : (<li><Link to={'/login'}>LOGIN </Link></li>)
        }
       </ul>
     </div>
