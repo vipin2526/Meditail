@@ -13,6 +13,7 @@ import Profile from './components/Profile';
 
 
 function App() {
+  document.title = 'MEDITAIL';
   return (
     <div className="App">
       <Router >
@@ -27,6 +28,7 @@ function App() {
           <Route path='/registration' element={<Registration />} />
           <Route path='/profile' element={<Profile />} />
         </Routes></div>
+ 
       </Router>   
     </div>
   );
