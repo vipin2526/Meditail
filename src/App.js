@@ -13,6 +13,7 @@ import Registration from './components/Registration';
 
 
 function App() {
+  document.title = 'MEDITAIL';
   return (
     <div className="App">
 

@@ -21,3 +21,43 @@
   float: right;
   padding: 5vw;
 }
+.slogan{
+  background-color: white;
+  padding: 10px;
+  color:brown;
+  font-family: sans-serif;
+  
+  margin-top: 250px;
+   margin-left: 25vw;
+   margin-right: 25vw;
+   font-size: 5vh;
+  text-align: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+.sloganpara{
+  background-color: white;
+  padding: 10px;
+  color:black;
+  font-family: sans-serif;
+  margin-top: 5px;
+   margin-left: 25vw;
+   margin-right: 25vw;
+   font-size: 3vh;
+  text-align: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+.services{
+  height: 40vh;
+  width: 25vw;
+  margin-left: 5vw;
+  margin-right: 0;
+  background: white;
+  border-radius: 20px;
+display: inline-block;
+font-size: 3vh;
+}
+.notice{
+  margin-top: 10vh;
+}
