@@ -1,7 +1,11 @@
-body{
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
     background-image: url("./asset/gg.jpg");
     background-repeat: no-repeat;
- background-size: 100vw 140vh ;
- background-attachment: fixed;
-     
-  }
+    background-size: 100vw 140vh;
+    background-attachment: fixed;
+
+}
