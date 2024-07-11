@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: LibreBaskerville-Regular
+font link: https://fonts.google.com/specimen/Libre+Baskerville
+font author: Impallari Type
+font author site: https://twitter.com/pabloimpallari
+Slogan Font: KaushanScript-Regular.ttf
+
+icon designer: IconTrack
+icon designer link: /IconTrack
+        
+{"bg":"#EDE3FB","icon-gradient-0":"#0076DD","icon-gradient-1":"#E600E9","font":"#221447","slogan":"#36285b"}
+      

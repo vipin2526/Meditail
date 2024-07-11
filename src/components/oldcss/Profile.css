@@ -1,0 +1,58 @@
+.profileBox {
+    display: block;
+    margin: 0;
+}
+
+.profileIcon h1:nth-child(2) {
+    margin-top: -3vw;
+    text-align: center;
+    margin-left: -2vw;
+}
+
+.profileIcon {
+    text-align: left;
+    margin-left: 2vw;
+    font-style: normal;
+
+}
+
+.profileIcon img {
+    border-radius: 100%;
+    margin: 5vw 5vw 5vw 10vw;
+}
+
+.userProfile {
+    height: 85vh;
+    width: 30vw;
+    background: #ffffff;
+    display: inline-flex;
+    box-shadow: 2px 10px 20px rgb(0, 0, 0);
+    border-radius: 15px;
+    margin: 0vh;
+    overflow: auto;
+}
+
+.userDetail {
+    height: 85vh;
+    width: 60vw;
+    background: #f6f0f066;
+    float: right;
+    box-shadow: 2px 10px 20px rgb(0, 0, 0);
+    border-radius: 15px;
+    overflow: auto;
+}
+.heading{
+margin: 2vh 0 6vh 0;
+}
+.medicineDate{
+     display:  block;
+    background: #beb0b0;
+    padding : 5px 10px;
+    border-bottom: 1px solid black;
+ 
+}
+.medicineName{
+ margin: 1vw;
+ display: block;
+ text-align: left;
+}

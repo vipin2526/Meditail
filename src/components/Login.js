@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { loginUser } from '../features/user/userSlice';
-import './css/Login.css';
-import './css/Myalert.css';
 import myalert from './js/myalert';
 
 function Login() {
