@@ -1,6 +1,6 @@
 import React from 'react'
 import icon from '../asset/icon.jpg'
-import '../components/css/profile.css'
+import '../components/css/Profile.css'
 
 export default function Profile() {
     return (
