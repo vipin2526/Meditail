@@ -1,8 +1,5 @@
-// src/features/user/userSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-import {backendUrl} from '../../components/js/backendUrl'
-
+import userApi from '../../components/js/userApi'
 
 const initialState = {
   id: null,
@@ -10,6 +7,7 @@ const initialState = {
   email: '',
   status: 'idle',
   error: null,
+  login: false
 };
 
 const userSlice = createSlice({
@@ -34,11 +32,12 @@ const userSlice = createSlice({
         state.name = name;
         state.email = email;
         state.status = 'succeeded';
+        state.login = true;
         state.error = null;
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.status = 'failed';
-        state.error = action.payload;
+        state.error = action.payload.message;
       })
       // Register
       .addCase(registerUser.pending, (state) => {
@@ -54,8 +53,26 @@ const userSlice = createSlice({
       })
       .addCase(registerUser.rejected, (state, action) => {
         state.status = 'failed';
-        state.error = action.payload;
+        state.error = action.payload.message;
+      })
+      .addCase(tokenLogin.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(tokenLogin.fulfilled, (state, action) => {
+        const { id, name, email } = action.payload;
+        state.id = id;
+        state.name = name;
+        state.email = email;
+        state.status = 'succeeded';
+        state.login = true;
+        state.error = null;
+      })
+      .addCase(tokenLogin.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload.message;
       });
+
   },
 });
 
@@ -64,7 +81,7 @@ export const loginUser = createAsyncThunk(
   'user/login',
   async (credentials, { rejectWithValue }) => {
     try {
-      const response = await axios.post(`${backendUrl}/api/user/login`, credentials);
+      const response = await userApi.post('/api/user/login', credentials);
       return response.data;
     } catch (err) {
       return rejectWithValue(err.response.data);
@@ -76,7 +93,7 @@ export const registerUser = createAsyncThunk(
   'user/register',
   async (userData, { rejectWithValue }) => {
     try {
-      const response = await axios.post(`${backendUrl}/api/user/register`, userData);
+      const response = await userApi.post('/api/user/register', userData);
       return response.data;
     } catch (err) {
       return rejectWithValue(err.response.data);
@@ -84,6 +101,20 @@ export const registerUser = createAsyncThunk(
   }
 );
 
-export const { logoutUser } = userSlice.actions;
+export const tokenLogin = createAsyncThunk(
+  'user/tokenlogin',
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await userApi.get('/api/user/');
+      return response.data;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
+  }
+);
+
+
+
+export const { logoutUser, islogin } = userSlice.actions;
 
 export default userSlice.reducer;

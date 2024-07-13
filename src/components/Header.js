@@ -1,16 +1,28 @@
 import { Link } from 'react-router-dom'
-import islogin from './js/islogin'
 import icon from '../asset/icon.jpg'
 import logo from '../asset/logo/vector/white.svg'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { tokenLogin } from '../features/user/userSlice'
+import Cookies from 'js-cookie';
 
 export default function Header() {
+  const { login } = useSelector((state) => state.user)
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const token = Cookies.get('token');
+    if (token) {
+      dispatch(tokenLogin());
+    }
+  }, [dispatch]);
+
   return (
     <nav className="bg-white dark:bg-zinc-800 shadow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex ">
             <div className="flex-shrink-0 flex items-center">
-              <img src={logo} alt="not found" height={100} width={200}/>
+              <img src={logo} alt="not found" height={100} width={200} />
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8 items-center">
               <Link to={'/'} className="text-zinc-500 dark:text-zinc-300 hover:text-zinc-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
@@ -28,7 +40,7 @@ export default function Header() {
             </div>
           </div>
           <div className="flex items-center">
-            {islogin() ? (
+            {login ? (
               <Link to={'/profile'} className="text-red-500 dark:text-red-400 hover:text-red-700 dark:hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium">
                 <img src={icon} className="h-8 w-8 rounded-full" alt="Not Found" />
               </Link>

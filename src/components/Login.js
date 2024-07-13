@@ -16,59 +16,88 @@ function Login() {
     myalert('Login successful!');
     setTimeout(() => navigate('/profile'), 1000);
   }
+
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
-      dispatch(loginUser({ username, password, remember })).unwrap();
+      dispatch(loginUser({ username, password, remember }));
     } catch (err) {
       console.error('Login failed:', err);
     }
   };
 
   return (
-    <div className="container-fluid login_body">
-      <div className="container login-container">
-        <form className="box" onSubmit={handleLogin}>
-          <h1 style={{ marginBottom: '3vh' }}>Login</h1>
-          <input
-            type="text"
-            name="username"
-            placeholder="USER ID"
-            required
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="PASSWORD"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <div className="line">
-            <label>
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-background to-foreground">
+      <div className="bg-card text-card-foreground rounded-3xl shadow-2xl overflow-hidden flex w-3/4 max-w-4xl transform transition-transform hover:scale-105">
+        <div className="w-1/2 p-8 bg-gradient-to-br from-primary to-secondary">
+          <h2 className="text-4xl font-extrabold mb-6 text-primary-foreground">SIGN IN</h2>
+          <form>
+            <div className="mb-4">
               <input
-                type="checkbox"
-                name="remember"
-                checked={remember}
-                onChange={(e) => setRemember(e.target.checked)}
+                type="text"
+                placeholder="USER ID"
+                className="w-full p-4 border border-primary rounded-lg bg-input text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                required
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
               />
-              remember me
-            </label>
-            <a href="/forget_password" className="forget">
-              forget password?
-            </a>
+            </div>
+            <div className="mb-4">
+              <input
+                type="password"
+                placeholder="PASSWORD"
+                className="w-full p-4 border border-primary rounded-lg bg-input text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+            <div className="flex items-center justify-between mb-6">
+              <label className="flex items-center">
+                <input
+                  type="checkbox"
+                  className="form-checkbox text-primary mr-2"
+                  checked={remember}
+                  onChange={(e) => setRemember(e.target.checked)}
+                />
+                <span className="text-muted-foreground">Remember me</span>
+              </label>
+              <a href="/forget_password" className="text-primary-foreground hover:underline">
+                Forgot password?
+              </a>
+            </div>
+            <button
+              onClick={handleLogin}
+              className="w-full bg-primary text-primary-foreground py-3 rounded-lg hover:bg-primary/80 transition-colors bg-green-500"
+              disabled={status === 'loading'}
+            >
+              {status === 'loading' ? 'Logging in...' : 'Login'}
+            </button>
+          </form>
+          {error && <p className="text-red-500">{error}</p>}
+          <div className="mt-6 text-center text-muted-foreground">or use your account</div>
+          <div className="flex justify-center mt-4 space-x-4">
+            <button className="bg-secondary text-secondary-foreground p-3 rounded-full hover:bg-secondary/80 transition-colors">
+              <img undefinedhidden="true" alt="social-icon" src="https://openui.fly.dev/openui/24x24.svg?text=🌐" />
+            </button>
+            <button className="bg-secondary text-secondary-foreground p-3 rounded-full hover:bg-secondary/80 transition-colors">
+              <img undefinedhidden="true" alt="google-icon" src="https://openui.fly.dev/openui/24x24.svg?text=G" />
+            </button>
+            <button className="bg-secondary text-secondary-foreground p-3 rounded-full hover:bg-secondary/80 transition-colors">
+              <img undefinedhidden="true" alt="linkedin-icon" src="https://openui.fly.dev/openui/24x24.svg?text=IN" />
+            </button>
           </div>
-          <button type="submit" disabled={status === 'loading'}>
-            {status === 'loading' ? 'Logging in...' : 'Login'}
-          </button>
-          {error && console.log(error)}
-          <div className="register-line">
-            Don't have an account?
-            <Link to='/registration'> Register</Link>
-          </div>
-        </form>
+        </div>
+        <div
+          className="w-1/2 bg-cover bg-center p-8 flex flex-col justify-center items-center"
+          style={{ backgroundImage: 'url(https://placehold.co/600x800)' }}
+        >
+          <h2 className="text-4xl font-extrabold text-white mb-6">Start your journey now</h2>
+          <p className="text-white mb-6">If you don't have an account yet, join us and start your journey.</p>
+          <Link to="/registration" className="bg-transparent border border-white text-white py-3 px-6 rounded-lg hover:bg-white hover:text-primary transition-colors">
+            Register
+          </Link>
+        </div>
       </div>
     </div>
   );

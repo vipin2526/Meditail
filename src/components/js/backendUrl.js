@@ -1,1 +1,0 @@
-export const backendUrl = "https://didactic-space-sniffle-vj6wp9q6qq72x4gp-3001.app.github.dev";
