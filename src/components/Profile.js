@@ -1,5 +1,5 @@
 import React from 'react'
-import icon from '../asset/icon.jpg'
+import defaultIcon from '../asset/images/defalutIconMale.jpg'
 import '../components/css/Profile.css'
 
 export default function Profile() {
@@ -7,7 +7,7 @@ export default function Profile() {
         <div id='profile' className="bg-card text-card-foreground p-6 shadow-lg bg-opacity-70 bg-blue-200 lg:px-40">
             <div className='lg:flex justify-evenly items-center'>
                 <div className="flex items-center mb-6 mr-auto">
-                    <img src={icon} alt="userIcon" className="rounded-full mr-4 border-4 border-primary" height={100} width={100} />
+                    <img src={defaultIcon} alt="userIcon" className="rounded-full mr-4 border-4 border-primary" height={100} width={100} />
                     <div>
                         <h2 className="text-2xl font-bold text-primary">Kyriollos Halim</h2>
                         <p className="text-muted-foreground">Age: 25</p>

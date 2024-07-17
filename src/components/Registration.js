@@ -59,7 +59,7 @@ const Register = () => {
             </div>
             <button
               type="submit"
-              className="w-full bg-primary text-primary-foreground py-3 rounded-lg hover:bg-primary/80 transition-colors"
+              className="w-full py-3 rounded-lg bg-green-500 text-white hover:bg-green-600 transition-colors"
               disabled={status === 'loading'}
             >
               {status === 'loading' ? 'Registering...' : 'Register'}

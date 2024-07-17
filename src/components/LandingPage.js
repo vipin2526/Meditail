@@ -1,5 +1,7 @@
 import React from 'react'
 import '../App.css'
+import doctorPatient from '../asset/images/locterPatient.jpeg'
+
 export default function LandingPage() {
   return (
     <div className="bg-[var(--background)] py-16 lg:px-40">
@@ -16,11 +18,11 @@ export default function LandingPage() {
           </button>
         </div>
         <div className="lg:w-1/2 flex justify-center lg:justify-end">
-          <img src="https://placehold.co/500x500" alt="Two doctors smiling" className="rounded-lg shadow-lg" />
+          <img src={doctorPatient} alt="Two doctors smiling" className="rounded-lg shadow-lg" />
         </div>
       </div>
 
-      
+
       <div className="bg-background text-foreground p-6 mt-20">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold">Easy <span className="text-primary">steps</span> for your care</h2>
@@ -92,53 +94,53 @@ export default function LandingPage() {
 
 
 
-            {/* people say about us */}
+      {/* people say about us */}
 
-            <div className="flex flex-col items-center space-y-8 mt-20">
-              <h2 className="text-3xl font-bold text-foreground">
-                What our patients <span className="text-primary">says</span> about us
-              </h2>
-              <div className="flex space-x-6">
-                <div className="bg-card p-6 rounded-lg boxShadowWhite w-80 text-center hover:bg-gray-500 mt-5">
-                  <p className="text-muted-foreground mb-4">
-                    "Lorem ipsum dolor sit consectetur. Fermentum nunc elementum proin ut. Vivamus euismod eget morbi senectus. Ornare pretium nunc duis sit elit velit. Est neque amet auctor."
-                  </p>
-                  <div className="flex items-center justify-center space-x-4">
-                    <img src="https://placehold.co/50x50" alt="Mary Jane" className="rounded-full" />
-                    <div>
-                      <p className="text-foreground font-semibold">Mary Jane</p>
-                      <p className="text-primary">★★★★★</p>
-                    </div>
-                  </div>
-                </div>
-        
-                <div className="bg-primary p-6 rounded-lg boxShadowWhite w-80 text-center hover:bg-gray-500 ">
-                  <p className="text-primary-foreground mb-4">
-                    "Lorem ipsum dolor sit consectetur. Fermentum nunc elementum proin ut. Vivamus euismod eget morbi senectus. Ornare pretium nunc duis sit elit velit. Est neque amet auctor."
-                  </p>
-                  <div className="flex items-center justify-center space-x-4 hover:bg-gray-500">
-                    <img src="https://placehold.co/50x50" alt="Mr. Jhon" className="rounded-full" />
-                    <div>
-                      <p className="text-primary-foreground font-semibold">Mr. Jhon</p>
-                      <p className="text-primary-foreground">★★★★★</p>
-                    </div>
-                  </div>
-                </div>
-        
-                <div className="bg-card p-6 rounded-lg boxShadowWhite w-80 text-center hover:bg-gray-500 mt-5">
-                  <p className="text-muted-foreground mb-4">
-                    "Lorem ipsum dolor sit consectetur. Fermentum nunc elementum proin ut. Vivamus euismod eget morbi senectus. Ornare pretium nunc duis sit elit velit. Est neque amet auctor."
-                  </p>
-                  <div className="flex items-center justify-center space-x-4">
-                    <img src="https://placehold.co/50x50" alt="Mr. David" className="rounded-full" />
-                    <div>
-                      <p className="text-foreground font-semibold">Mr. David</p>
-                      <p className="text-primary">★★★★★</p>
-                    </div>
-                  </div>
-                </div>
+      <div className="flex flex-col items-center space-y-8 mt-20">
+        <h2 className="text-3xl font-bold text-foreground">
+          What our patients <span className="text-primary">says</span> about us
+        </h2>
+        <div className="flex space-x-6">
+          <div className="bg-card p-6 rounded-lg boxShadowWhite w-80 text-center hover:bg-gray-500 mt-5">
+            <p className="text-muted-foreground mb-4">
+              "Lorem ipsum dolor sit consectetur. Fermentum nunc elementum proin ut. Vivamus euismod eget morbi senectus. Ornare pretium nunc duis sit elit velit. Est neque amet auctor."
+            </p>
+            <div className="flex items-center justify-center space-x-4">
+              <img src="https://placehold.co/50x50" alt="Mary Jane" className="rounded-full" />
+              <div>
+                <p className="text-foreground font-semibold">Mary Jane</p>
+                <p className="text-primary">★★★★★</p>
               </div>
             </div>
+          </div>
+
+          <div className="bg-primary p-6 rounded-lg boxShadowWhite w-80 text-center hover:bg-gray-500 ">
+            <p className="text-primary-foreground mb-4">
+              "Lorem ipsum dolor sit consectetur. Fermentum nunc elementum proin ut. Vivamus euismod eget morbi senectus. Ornare pretium nunc duis sit elit velit. Est neque amet auctor."
+            </p>
+            <div className="flex items-center justify-center space-x-4 hover:bg-gray-500">
+              <img src="https://placehold.co/50x50" alt="Mr. Jhon" className="rounded-full" />
+              <div>
+                <p className="text-primary-foreground font-semibold">Mr. Jhon</p>
+                <p className="text-primary-foreground">★★★★★</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-card p-6 rounded-lg boxShadowWhite w-80 text-center hover:bg-gray-500 mt-5">
+            <p className="text-muted-foreground mb-4">
+              "Lorem ipsum dolor sit consectetur. Fermentum nunc elementum proin ut. Vivamus euismod eget morbi senectus. Ornare pretium nunc duis sit elit velit. Est neque amet auctor."
+            </p>
+            <div className="flex items-center justify-center space-x-4">
+              <img src="https://placehold.co/50x50" alt="Mr. David" className="rounded-full" />
+              <div>
+                <p className="text-foreground font-semibold">Mr. David</p>
+                <p className="text-primary">★★★★★</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
   )

@@ -4,7 +4,7 @@ export default function Treatments() {
   return (
     <div>
       <div className="container fs-3">
-     Prescription</div>
+        Prescription</div>
 
     </div>
   )

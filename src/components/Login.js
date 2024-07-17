@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { loginUser } from '../features/user/userSlice';
+import '../components/css/Myalert.css'
 import myalert from './js/myalert';
 
 function Login() {
@@ -13,8 +14,8 @@ function Login() {
   const { status, error } = useSelector((state) => state.user);
 
   if (status === 'succeeded') {
-    myalert('Login successful!');
-    setTimeout(() => navigate('/profile'), 1000);
+    navigate('/profile');
+    myalert('Login successful!', 2000, 'green');
   }
 
   const handleLogin = async (event) => {
@@ -68,7 +69,7 @@ function Login() {
             </div>
             <button
               onClick={handleLogin}
-              className="w-full bg-primary text-primary-foreground py-3 rounded-lg hover:bg-primary/80 transition-colors bg-green-500"
+              className="w-full py-3 rounded-lg hover:bg-primary/80 transition-colors bg-green-500 text-white hover:bg-green-600"
               disabled={status === 'loading'}
             >
               {status === 'loading' ? 'Logging in...' : 'Login'}

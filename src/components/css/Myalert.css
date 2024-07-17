@@ -1,9 +1,9 @@
 .alertbox {
     position: fixed;
-    padding: 50px;
+    padding: 30px;
     height: min-content;
     width: 40vw;
-    background-color: rgb(5, 93, 255);
+    background-color: #055dff;
     border-radius: 10px;
     font-size: 30px;
     font-weight: bolder;

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import icon from '../asset/icon.jpg'
+import defaultIcon from '../asset/images/defalutIconMale.jpg'
 import logo from '../asset/logo/vector/white.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
@@ -29,7 +29,7 @@ export default function Header() {
                 HOME
               </Link>
               <Link to={'/treatments'} className="text-zinc-500 dark:text-zinc-300 hover:text-zinc-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                PRISCRIPTION
+                TREATMENTS
               </Link>
               <Link to={'/hospital'} className="text-zinc-500 dark:text-zinc-300 hover:text-zinc-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 HOSPITAL
@@ -42,7 +42,7 @@ export default function Header() {
           <div className="flex items-center">
             {login ? (
               <Link to={'/profile'} className="text-red-500 dark:text-red-400 hover:text-red-700 dark:hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium">
-                <img src={icon} className="h-8 w-8 rounded-full" alt="Not Found" />
+                <img src={defaultIcon} className="h-8 w-8 rounded-full" alt="Not Found" />
               </Link>
             ) : (
               <Link to={'/login'} className="text-red-500 dark:text-red-400 hover:text-red-700 dark:hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium">
