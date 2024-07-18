@@ -4,13 +4,12 @@ import logo from '../asset/logo/vector/white.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { tokenLogin } from '../features/user/userSlice'
-import Cookies from 'js-cookie';
 
 export default function Header() {
   const { login } = useSelector((state) => state.user)
   const dispatch = useDispatch();
   useEffect(() => {
-    const token = Cookies.get('token');
+    const token = localStorage.getItem('token');
     if (token) {
       dispatch(tokenLogin());
     }
