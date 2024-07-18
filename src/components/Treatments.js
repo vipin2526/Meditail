@@ -64,7 +64,7 @@ export default function Treatments() {
         ))}
       </section>
       {
-        showAddForm ? (<AddTreatment addTreatment={handleAddTreatment} />) : (<></>)
+        showAddForm ? (<AddTreatment addTreatment={handleAddTreatment} showAddForm={handleShowAddForm} />) : (<></>)
       }
     </div>
   );

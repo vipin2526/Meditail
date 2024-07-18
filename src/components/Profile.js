@@ -1,8 +1,10 @@
 import React from 'react'
 import defaultIcon from '../asset/images/defalutIconMale.jpg'
 import '../components/css/Profile.css'
+import { useNavigate } from 'react-router-dom'
 
 export default function Profile() {
+    const navigate = useNavigate();
     return (
         <div id='profile' className="bg-card text-card-foreground p-6 shadow-lg bg-opacity-70 bg-blue-200 lg:px-40">
             <div className='lg:flex justify-evenly items-center'>
@@ -31,7 +33,10 @@ export default function Profile() {
             </div>
 
             <div className="mb-6">
-                <h3 className="text-lg font-bold text-secondary">Medical History</h3>
+                <div className='flex justify-between mb-2'>
+                    <h3 className="text-lg font-bold text-secondary">Medical History</h3>
+                    <div onClick={() => { navigate('/treatments') }} className="text-center ml-4 bg-blue-500 text-white hover:bg-blue-600 hover:cursor-default px-2 rounded-md text-sm flex items-center h-8">ALL TREATMENTS</div>
+                </div>
                 <div className="flex justify-between items-center mb-2 p-2 bg-muted rounded-lg boxShadowWhite">
                     <div className="flex items-center">
                         <img src="https://placehold.co/40x40" alt="doctorProfile" className="rounded-full mr-2 border-2 border-secondary" />

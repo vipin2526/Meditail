@@ -18,17 +18,17 @@ function App() {
       <Router >
         <Header />
         <div className='margin'>
-        <Routes >
-          <Route path='/' element={<LandingPage />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/registration' element={<Registration />} />
-          <Route path='/profile' element={<Profile />} />
-          <Route path='/treatments' element={<Treatments />} />
-          <Route path='/hospital' element={<Hospital />} />
-          <Route path='/services' element={<Services />} />
-        </Routes></div>
- 
-      </Router>   
+          <Routes >
+            <Route path='/' element={<LandingPage />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/registration' element={<Registration />} />
+            <Route path='/profile' element={<Profile />} />
+            <Route path='/treatments' element={<Treatments />} />
+            <Route path='/hospital' element={<Hospital />} />
+            <Route path='/services' element={<Services />} />
+          </Routes>
+        </div>
+      </Router>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import closeIcon from '../asset/images/closeIcon.svg'
 
-export default function AddTreatment({ addTreatment }) {
+export default function AddTreatment({ addTreatment, showAddForm }) {
   const [formData, setFormData] = useState({
     title: '',
     doctor: '',
@@ -29,7 +30,11 @@ export default function AddTreatment({ addTreatment }) {
   return (
     <div className="flex justify-center items-center h-screen bg-background dark:bg-foreground p-4 fixed top-0 left-0 right-0">
       <div className=" bg-card p-6 rounded-lg boxShadowWhite">
-        <h3 className="text-xl font-semibold mb-4">Add New Treatment Details</h3>
+        <div className='flex justify-between mb-2'>
+          <h3 className="text-xl font-semibold mb-4">Add New Treatment Details</h3>
+          <div onClick={showAddForm} className="text-center ml-4 text-white hover:bg-blue-200 hover:cursor-default rounded-md text-sm flex items-center h-8"> <img src={closeIcon} height={30} width={30} alt="cancel" /></div>
+        </div>
+
         <form onSubmit={handleSubmit}>
           <div className="md:flex md:space-x-4">
             <div className="mb-4 md:mb-0 md:w-1/2">
