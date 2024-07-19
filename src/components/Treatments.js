@@ -29,7 +29,7 @@ export default function Treatments() {
           <div className="flex items-center space-x-4">
             <h1 className="text-3xl font-semibold text-primary-foreground mb-4 mx-auto">Treatment History</h1>
           </div>
-          <div onClick={handleShowAddForm} className="text-right ml-4 bg-blue-500 text-white hover:bg-blue-600 px-4 rounded-md text-sm font-medium flex items-center h-10">
+          <div onClick={handleShowAddForm} className="text-right ml-4 bg-blue-500 text-white hover:cursor-default hover:bg-blue-600 px-4 rounded-md text-sm font-medium flex items-center h-10">
             Add Treatment Detail
           </div>
         </div>

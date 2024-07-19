@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { loginUser } from '../features/user/userSlice';
 import '../components/css/Myalert.css'
 import myalert from './js/myalert';
+import loginBg from '../asset/images/medicalBG4.jpg'
 
 function Login() {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ function Login() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-background to-foreground">
-      <div className="bg-card text-card-foreground rounded-3xl shadow-2xl overflow-hidden flex w-3/4 max-w-4xl transform transition-transform hover:scale-105">
+      <div className="bg-card text-card-foreground rounded-3xl shadow-2xl overflow-hidden flex w-3/4 max-w-4xl transform transition-transform hover:scale-105 boxShadowWhite">
         <div className="w-1/2 p-8 bg-gradient-to-br from-primary to-secondary">
           <h2 className="text-4xl font-extrabold mb-6 text-primary-foreground">SIGN IN</h2>
           <form>
@@ -91,11 +92,11 @@ function Login() {
         </div>
         <div
           className="w-1/2 bg-cover bg-center p-8 flex flex-col justify-center items-center"
-          style={{ backgroundImage: 'url(https://placehold.co/600x800)' }}
+          style={{ backgroundImage: `url(${loginBg})` }}
         >
-          <h2 className="text-4xl font-extrabold text-white mb-6">Start your journey now</h2>
-          <p className="text-white mb-6">If you don't have an account yet, join us and start your journey.</p>
-          <Link to="/registration" className="bg-transparent border border-white text-white py-3 px-6 rounded-lg hover:bg-white hover:text-primary transition-colors">
+          <h2 className="text-4xl font-extrabold text-black mb-6">Start your journey now</h2>
+          <p className="text-black mb-6">If you don't have an account yet, join us and start your journey.</p>
+          <Link to="/registration" className="bg-transparent border border-black text-black py-3 px-6 rounded-lg hover:bg-white hover:text-primary transition-colors">
             Register
           </Link>
         </div>

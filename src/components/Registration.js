@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { registerUser } from '../features/user/userSlice';
+import registerBg from '../asset/images/reportdesign.jpg'
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -17,12 +18,12 @@ const Register = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-background to-foreground">
-      <div className="bg-card text-card-foreground rounded-3xl shadow-2xl overflow-hidden flex w-3/4 max-w-4xl transform transition-transform hover:scale-105">
-        <div className="w-1/2 bg-cover bg-center p-8 flex flex-col justify-center items-center" style={{ backgroundImage: 'url(https://placehold.co/600x800)' }}>
-          <h2 className="text-4xl font-extrabold text-white mb-6">Join us now!</h2>
-          <p className="text-white mb-6">Start your journey with us by creating an account.</p>
-          <Link to="/registration" className="bg-transparent border border-white text-white py-3 px-6 rounded-lg hover:bg-white hover:text-primary transition-colors">
-            Sign Up
+      <div className="bg-card text-card-foreground rounded-3xl shadow-2xl overflow-hidden flex w-3/4 max-w-4xl transform transition-transform hover:scale-105 boxShadowWhite">
+        <div className="w-1/2 bg-cover bg-center p-8 flex flex-col justify-center items-center" style={{ backgroundImage: `url(${registerBg})` }}>
+          <h2 className="text-4xl font-extrabold text-black mb-6">Join us now!</h2>
+          <p className="text-black mb-6">Start your journey with us by creating an account.</p>
+          <Link to="/login" className="bg-transparent border border-black text-black py-3 px-6 rounded-lg hover:bg-white hover:text-primary transition-colors">
+            Sign In
           </Link>
         </div>
         <div className="w-1/2 p-8 bg-gradient-to-br from-primary to-secondary">
