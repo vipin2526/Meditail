@@ -11,7 +11,9 @@ export default function Profile() {
                 <div className="flex items-center mb-6 mr-auto">
                     <img src={defaultIcon} alt="userIcon" className="rounded-full mr-4 border-4 border-primary" height={100} width={100} />
                     <div>
-                        <h2 className="text-2xl font-bold text-primary">Kyriollos Halim</h2>
+                        <h2 className="text-2xl font-bold text-primary">Kyriollos Halim
+                            <button className='px-2 ml-2 h-5 text-xs font-light rounded border-black border bg-white'>EDIT PROFILE</button>
+                        </h2>
                         <p className="text-muted-foreground">Age: 25</p>
                         <p className="text-muted-foreground">Address: 324-Qena, Egypt</p>
                         <p className="text-muted-foreground">Email: Kyriollos.halim@gmail.com</p>

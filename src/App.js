@@ -9,6 +9,7 @@ import Header from './components/Header';
 import Login from './components/Login';
 import Registration from './components/Registration';
 import Profile from './components/Profile';
+import Consultation from "./components/Consultation";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path='/treatments' element={<Treatments />} />
             <Route path='/hospital' element={<Hospital />} />
             <Route path='/services' element={<Services />} />
+            <Route path='/consultation' element={<Consultation />} />
           </Routes>
         </div>
       </Router>

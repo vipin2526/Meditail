@@ -18,6 +18,8 @@ const userSlice = createSlice({
       state.id = null;
       state.name = '';
       state.email = '';
+      localStorage.removeItem('token');
+      state.login = false;
     },
   },
   extraReducers: (builder) => {
