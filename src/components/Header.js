@@ -16,7 +16,7 @@ export default function Header() {
   }, [dispatch]);
 
   return (
-    <nav className="bg-white dark:bg-zinc-800 shadow">
+    <nav className="bg-white dark:bg-blue-600 shadow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex ">
@@ -30,9 +30,9 @@ export default function Header() {
               <Link to={'/treatments'} className="text-zinc-500 dark:text-zinc-300 hover:text-zinc-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 TREATMENTS
               </Link>
-              <Link to={'/hospital'} className="text-zinc-500 dark:text-zinc-300 hover:text-zinc-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              {/* <Link to={'/hospital'} className="text-zinc-500 dark:text-zinc-300 hover:text-zinc-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 HOSPITAL
-              </Link>
+              </Link> */}
               <Link to={'/services'} className="text-zinc-500 dark:text-zinc-300 hover:text-zinc-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 SERVICES
               </Link>

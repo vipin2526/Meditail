@@ -29,26 +29,28 @@ export default function LandingPage() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
           <div className="bg-card p-6 rounded-lg text-center boxShadowWhite">
-            <img src="https://placehold.co/64x64?text=👨‍⚕️" alt="Register & Login" className="mx-auto mb-4" />
+            <div className="text-6xl mb-4">📝</div> {/* Icon for Registration */}
             <h3 className="font-semibold">Register & Login</h3>
-            <p className="text-muted-foreground">Lorem ipsum dolor sit amet consectetur. Feugiat neque.</p>
+            <p className="text-muted-foreground">Register your account and log in to start managing your healthcare.</p>
           </div>
-          <div className="bg-primary p-6 rounded-lg boxShadowWhite text-center ">
-            <img src="https://placehold.co/64x64?text=🩺" alt="Update Health Details" className="mx-auto mb-4" />
+          <div className="bg-primary p-6 rounded-lg boxShadowWhite text-center">
+            <div className="text-6xl mb-4">🩺</div> {/* Icon for Health Details */}
             <h3 className="font-semibold text-primary-foreground">Update Health Details</h3>
-            <p className="text-primary-foreground">Lorem ipsum dolor sit amet consectetur. Feugiat neque.</p>
+            <p className="text-primary-foreground">Update your health information to keep your records accurate and up-to-date.</p>
           </div>
           <div className="bg-card p-6 rounded-lg boxShadowWhite text-center">
-            <img src="https://placehold.co/64x64?text=📅" alt="Save Treatment Slips" className="mx-auto mb-4" />
+            <div className="text-6xl mb-4">💼</div> {/* Icon for Treatment Slips */}
             <h3 className="font-semibold">Save Treatment Slips</h3>
-            <p className="text-muted-foreground">Lorem ipsum dolor sit amet consectetur. Feugiat neque.</p>
+            <p className="text-muted-foreground">Save and manage your treatment slips for easy access and tracking.</p>
           </div>
           <div className="bg-card p-6 rounded-lg boxShadowWhite text-center">
-            <img src="https://placehold.co/64x64?text=💊" alt="Get Medical History Anytime" className="mx-auto mb-4" />
+            <div className="text-6xl mb-4">📈</div> {/* Icon for Medical History */}
             <h3 className="font-semibold">Get Medical History Anytime</h3>
-            <p className="text-muted-foreground">Lorem ipsum dolor sit amet consectetur. Feugiat neque.</p>
+            <p className="text-muted-foreground">Access your complete medical history whenever you need it.</p>
           </div>
+
         </div>
+
         <div className="flex flex-col md:flex-row md:items-center justify-between">
           <div className="md:w-1/2 mb-10 md:mb-0">
             <h2 className="text-3xl font-bold mb-4">Book an <span className="text-primary">Appointment</span> online</h2>
