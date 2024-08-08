@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import defaultIcon from '../asset/images/defalutIconMale.jpg'
+import defaultIcon from '../asset/images/defaultIconMale.jpg'
 import logo from '../asset/logo/vector/white.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'

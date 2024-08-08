@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { loginUser } from '../features/user/userSlice';
+import { loginUser,idleState } from '../features/user/userSlice';
 import '../components/css/Myalert.css'
 import myalert from './js/myalert';
 import loginBg from '../asset/images/medicalBG4.jpg'
@@ -14,9 +14,13 @@ function Login() {
   const [remember, setRemember] = useState(false);
   const { status, error } = useSelector((state) => state.user);
 
-  if (status === 'succeeded') {
+  if (status === 'succeededL') {
     navigate('/profile');
     myalert('Login successful!', 2000, 'green');
+  }
+  if (status === 'succeededR') {
+    myalert('Registered successfully!', 2000, 'green');
+    dispatch(idleState());
   }
 
   const handleLogin = async (event) => {

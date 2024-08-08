@@ -21,6 +21,9 @@ const userSlice = createSlice({
       localStorage.removeItem('token');
       state.login = false;
     },
+    idleState(state) {
+      state.status = 'idle';
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -33,7 +36,7 @@ const userSlice = createSlice({
         state.id = id;
         state.name = name;
         state.email = email;
-        state.status = 'succeeded';
+        state.status = 'succeededL';
         state.login = true;
         state.error = null;
       })
@@ -50,7 +53,7 @@ const userSlice = createSlice({
         state.id = id;
         state.name = name;
         state.email = email;
-        state.status = 'succeeded';
+        state.status = 'succeededR';
         state.error = null;
       })
       .addCase(registerUser.rejected, (state, action) => {
@@ -66,7 +69,7 @@ const userSlice = createSlice({
         state.id = id;
         state.name = name;
         state.email = email;
-        state.status = 'succeeded';
+        state.status = 'succeededL';
         state.login = true;
         state.error = null;
       })
@@ -119,6 +122,6 @@ export const tokenLogin = createAsyncThunk(
 
 
 
-export const { logoutUser, islogin } = userSlice.actions;
+export const { logoutUser, islogin ,idleState } = userSlice.actions;
 
 export default userSlice.reducer;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { registerUser } from '../features/user/userSlice';
 import registerBg from '../asset/images/reportdesign.jpg'
 
@@ -9,13 +9,17 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [phoneNo, setPhoneNo] = useState('');
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { status, error } = useSelector((state) => state.user);
 
+  if (status === 'succeededR') {
+    navigate('/login');
+  }
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(registerUser({ username, password, phoneNo }));
   };
-
+ 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-background to-foreground">
       <div className="bg-card text-card-foreground rounded-3xl shadow-2xl overflow-hidden flex w-3/4 max-w-4xl transform transition-transform hover:scale-105 boxShadowWhite">
