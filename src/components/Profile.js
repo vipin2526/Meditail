@@ -1,35 +1,77 @@
-import React from 'react'
-import defaultIcon from '../asset/images/defalutIconMale.jpg'
-import '../components/css/Profile.css'
-import { useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProfileData } from '../features/profile/profileSlice';
+import defaultIcon from '../asset/images/defaultIconMale.jpg';
+import '../components/css/Profile.css';
+import { useNavigate } from 'react-router-dom';
+import UpdateProfile from './UpdateProfile';
+import deleteId from '../components/js/deleteId'
+
 
 export default function Profile() {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
+    const { data: profile, loading, error } = useSelector((state) => state.profile);
+    const profileData=deleteId(profile);
+    const [showEditForm, setShowEditForm] = useState(false);
+
+    const handleEditClick = () => {
+        setShowEditForm(!showEditForm);
+    };
+    useEffect(() => {
+        dispatch(fetchProfileData());
+    }, [dispatch]);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+
+    if (!profileData) {
+        return <div>No profile data available.</div>;
+    }
+
     return (
         <div id='profile' className="bg-card text-card-foreground p-6 shadow-lg bg-opacity-70 bg-blue-200 lg:px-40">
             <div className='lg:flex justify-evenly items-center'>
                 <div className="flex items-center mb-6 mr-auto">
-                    <img src={defaultIcon} alt="userIcon" className="rounded-full mr-4 border-4 border-primary" height={100} width={100} />
+                    <img
+                        src={defaultIcon}
+                        alt="userIcon"
+                        className="rounded-full mr-4 border-4 border-primary"
+                        height={100}
+                        width={100}
+                    />
                     <div>
-                        <h2 className="text-2xl font-bold text-primary">Kyriollos Halim
-                            <button className='px-2 ml-2 h-5 text-xs font-light rounded border-black border bg-white'>EDIT PROFILE</button>
+                        <h2 className="text-2xl font-bold text-primary">
+                            {profileData.name}
+                            <button onClick={handleEditClick} className='px-2 ml-2 h-5 text-xs font-light rounded border-black border bg-white'>EDIT PROFILE</button>
                         </h2>
-                        <p className="text-muted-foreground">Age: 25</p>
-                        <p className="text-muted-foreground">Address: 324-Qena, Egypt</p>
-                        <p className="text-muted-foreground">Email: Kyriollos.halim@gmail.com</p>
-                        <p className="text-muted-foreground">Mobile: 01273339173</p>
+                        <p className="text-muted-foreground">Age: {profileData.age}</p>
+                        <p className="text-muted-foreground">Address: {profileData.address}</p>
+                        <p className="text-muted-foreground">Email: {profileData.email}</p>
+                        <p className="text-muted-foreground">Mobile: {profileData.mobile}</p>
                     </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4 mb-6">
                     <div className="bg-primary text-primary-foreground p-4 rounded-lg boxShadowWhite">
-                        <p className="font-semibold">Blood Type: O</p>
-                        <p className="font-semibold">Allergies: Chocolate, Beans</p>
-                        <p className="font-semibold">Diseases: Diabetic</p>
+                        <p className="font-semibold">Blood Type: {profileData.bloodType}</p>
+                        <p className="font-semibold">Allergies: {profileData.allergies.join(', ')}</p>
+                        <p className="font-semibold">Diseases: {profileData.diseases.join(', ')}</p>
                     </div>
                     <div className="bg-accent text-accent-foreground p-4 rounded-lg boxShadowWhite">
                         <p className="font-semibold">Regular Checkups</p>
-                        <p>Dr Ahmed Qenawy - Plastic Clinic</p>
-                        <p>Dr Ahmed Azzab - Cardiologist</p>
+                        {profileData.checkups.map((checkup, index) => (
+                            <div key={index}>
+                                <p>{checkup.doctor} - {checkup.specialty} on {checkup.date} </p>
+
+                                {/* <p>{checkup.doctor} - {checkup.specialty} on {checkup.date} at {checkup.location}</p>
+                                <p>Notes: {checkup.notes}</p> */}
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
@@ -37,78 +79,39 @@ export default function Profile() {
             <div className="mb-6">
                 <div className='flex justify-between mb-2'>
                     <h3 className="text-lg font-bold text-secondary">Medical History</h3>
-                    <div onClick={() => { navigate('/treatments') }} className="text-center ml-4 bg-blue-500 text-white hover:bg-blue-600 hover:cursor-default px-2 rounded-md text-sm flex items-center h-8">ALL TREATMENTS</div>
+                    <div onClick={() => { navigate('/treatments') }} className="text-center ml-4 bg-blue-500 text-white hover:bg-blue-600 hover:cursor-pointer px-2 rounded-md text-sm flex items-center h-8">ALL TREATMENTS</div>
                 </div>
-                <div className="flex justify-between items-center mb-2 p-2 bg-muted rounded-lg boxShadowWhite">
-                    <div className="flex items-center">
-                        <img src="https://placehold.co/40x40" alt="doctorProfile" className="rounded-full mr-2 border-2 border-secondary" />
-                        <div>
-                            <p className="font-semibold">Dr Ahmed Qenawy</p>
-                            <p className="text-sm text-muted-foreground">Plastic Surgery</p>
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                    {Object.entries(profileData.healthMetrics).map(([key, value], index) => (
+                        <div key={index} className="bg-secondary text-secondary-foreground p-4 rounded-lg boxShadowWhite">
+                            <p className="font-semibold">{key.charAt(0).toUpperCase() + key.slice(1)}</p>
+                            <p>{value.value}</p>
+                            <p className="text-sm text-muted-foreground">{value.status}</p>
                         </div>
-                    </div>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                        <p>10/7/2019</p>
-                        <p className="ml-4">Maadi Medical Centre, Cairo</p>
-                        <p className="ml-4">Medical Surgery</p>
-                    </div>
-                </div>
-                <div className="flex justify-between items-center p-2 bg-muted rounded-lg boxShadowWhite">
-                    <div className="flex items-center">
-                        <img src="https://placehold.co/40x40" alt="doctorProfile" className="rounded-full mr-2 border-2 border-secondary" />
-                        <div>
-                            <p className="font-semibold">Dr Ahmed Azzab</p>
-                            <p className="text-sm text-muted-foreground">Cardiologist</p>
-                        </div>
-                    </div>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                        <p>10/7/2019</p>
-                        <p className="ml-4">Maadi Medical Centre, Cairo</p>
-                        <p className="ml-4">Medical Consultant</p>
-                    </div>
+                    ))}
                 </div>
             </div>
-            <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="bg-secondary text-secondary-foreground p-4 rounded-lg boxShadowWhite">
-                    <p className="font-semibold">Blood Pressure</p>
-                    <p>120/80 mm/Hg</p>
-                    <p className="text-sm text-muted-foreground">Normal</p>
-                </div>
-                <div className="bg-secondary text-secondary-foreground p-4 rounded-lg boxShadowWhite">
-                    <p className="font-semibold">Heart Rate</p>
-                    <p>102 beats/min</p>
-                    <p className="text-sm text-muted-foreground">Above Normal</p>
-                </div>
-                <div className="bg-secondary text-secondary-foreground p-4 rounded-lg boxShadowWhite">
-                    <p className="font-semibold">Glucose</p>
-                    <p>100 mg/dL</p>
-                    <p className="text-sm text-muted-foreground">Normal</p>
-                </div>
-                <div className="bg-secondary text-secondary-foreground p-4 rounded-lg boxShadowWhite">
-                    <p className="font-semibold">Cholesterol</p>
-                    <p>85 mg/dL</p>
-                    <p className="text-sm text-muted-foreground">Normal</p>
-                </div>
-            </div>
+
             <div className="grid grid-cols-2 gap-4">
                 <div className="bg-muted text-muted-foreground p-4 rounded-lg boxShadowWhite">
                     <h4 className="font-bold text-secondary">Symptoms</h4>
-                    <p>Excessive thirst and hunger</p>
-                    <p>Frequent urination</p>
-                    <p>Weight loss or gain</p>
-                    <p>Fatigue</p>
-                    <p>Irritability</p>
-                    <p>Slow-healing wounds</p>
+                    {profileData.symptoms.map((symptom, index) => (
+                        <p key={index}>{symptom}</p>
+                    ))}
                 </div>
                 <div className="bg-muted text-muted-foreground p-4 rounded-lg boxShadowWhite">
                     <h4 className="font-bold text-secondary">Diagnosis</h4>
-                    <p>May be diagnosed based on A1C criteria or plasma glucose criteria...</p>
+                    <p>{profileData.diagnosis}</p>
                     <div className="flex mt-4">
-                        <a href="/" className="text-primary-foreground mr-4 underline">Prescription.pdf</a>
-                        <a href="/" className="text-primary-foreground underline">Blood Tests.pdf</a>
+                        {profileData.documents.map((doc, index) => (
+                            <a key={index} href={doc.link} className="text-primary-foreground mr-4 underline">{doc.name}</a>
+                        ))}
                     </div>
                 </div>
             </div>
+            {showEditForm && (
+               <UpdateProfile  handleEditClick={handleEditClick} />
+            )}
         </div>
-    )
+    );
 }
