@@ -54,8 +54,8 @@ export default function LandingPage() {
         <div className="flex flex-col md:flex-row md:items-center justify-between">
           <div className="md:w-1/2 mb-10 md:mb-0">
             <h2 className="text-3xl font-bold mb-4">Book an <span className="text-primary">Appointment</span> online</h2>
-            <p className="text-muted-foreground mb-4">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-            <p className="text-muted-foreground mb-4">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim.</p>
+            <p className="text-muted-foreground mb-4">At MediTail, we prioritize your health. Booking an appointment has never been easier. Our platform allows you to schedule visits with your healthcare provider at your convenience.</p>
+            <p className="text-muted-foreground mb-4">Whether you need a routine check-up or a specialized consultation, our user-friendly interface guides you through the process seamlessly.</p>
             <ul className="list-disc list-inside text-muted-foreground">
               <li>Medic is your reliable healthcare partner.</li>
               <li>Expert care, your well-being.</li>
@@ -105,7 +105,7 @@ export default function LandingPage() {
         <div className="flex space-x-6">
           <div className="bg-card p-6 rounded-lg boxShadowWhite w-80 text-center hover:bg-gray-500 mt-5">
             <p className="text-muted-foreground mb-4">
-              "Lorem ipsum dolor sit consectetur. Fermentum nunc elementum proin ut. Vivamus euismod eget morbi senectus. Ornare pretium nunc duis sit elit velit. Est neque amet auctor."
+              MediTail has completely transformed how I manage my health records. The ease of accessing my medical history has made my appointments so much smoother. Highly recommend!
             </p>
             <div className="flex items-center justify-center space-x-4">
               <img src="https://placehold.co/50x50" alt="Mary Jane" className="rounded-full" />
@@ -118,7 +118,7 @@ export default function LandingPage() {
 
           <div className="bg-primary p-6 rounded-lg boxShadowWhite w-80 text-center hover:bg-gray-500 ">
             <p className="text-primary-foreground mb-4">
-              "Lorem ipsum dolor sit consectetur. Fermentum nunc elementum proin ut. Vivamus euismod eget morbi senectus. Ornare pretium nunc duis sit elit velit. Est neque amet auctor."
+              As a healthcare provider, I find MediTail's integration with existing systems to be seamless. It allows me to provide better care to my patients with quick access to their medical histories.
             </p>
             <div className="flex items-center justify-center space-x-4 hover:bg-gray-500">
               <img src="https://placehold.co/50x50" alt="Mr. Jhon" className="rounded-full" />
@@ -131,7 +131,7 @@ export default function LandingPage() {
 
           <div className="bg-card p-6 rounded-lg boxShadowWhite w-80 text-center hover:bg-gray-500 mt-5">
             <p className="text-muted-foreground mb-4">
-              "Lorem ipsum dolor sit consectetur. Fermentum nunc elementum proin ut. Vivamus euismod eget morbi senectus. Ornare pretium nunc duis sit elit velit. Est neque amet auctor."
+              I love how MediTail empowers me to take control of my health. I can easily track my prescriptions and treatments, and the interface is so user-friendly!
             </p>
             <div className="flex items-center justify-center space-x-4">
               <img src="https://placehold.co/50x50" alt="Mr. David" className="rounded-full" />
