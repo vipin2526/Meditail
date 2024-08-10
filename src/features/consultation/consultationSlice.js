@@ -30,8 +30,9 @@ const consultationSlice = createSlice({
                 state.chatLog.push({ user: 'Meditail AI', message: action.payload });
             })
             .addCase(fetchChatResponse.rejected, (state, action) => {
-                state.status = 'failed';
-                state.error = 'I failed to understand, Please ask your question again.';
+                state.status = 'succeeded';
+                // state.error = 'I failed to understand, Please ask your question again.';
+                state.chatLog.push({ user: 'Meditail AI', message: 'I failed to understand, Please ask your question again.'});
             });
     },
 });
