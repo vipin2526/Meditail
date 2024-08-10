@@ -31,7 +31,7 @@ const consultationSlice = createSlice({
             })
             .addCase(fetchChatResponse.rejected, (state, action) => {
                 state.status = 'failed';
-                state.error = action.error.message;
+                state.error = 'I failed to understand, Please ask your question again.';
             });
     },
 });
