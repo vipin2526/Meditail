@@ -14,7 +14,7 @@ export default function LandingPage() {
             We prioritize your well-being, offering expert guidance and support. Your health is our top concern, and we are committed to providing exceptional care and understanding.
           </p>
           <button className="mt-8 bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600">
-            Get Appointment
+            <a href="#appointment">Get Appointment </a>
           </button>
         </div>
         <div className="lg:w-1/2 flex justify-center lg:justify-end">
@@ -51,7 +51,7 @@ export default function LandingPage() {
 
         </div>
 
-        <div className="flex flex-col md:flex-row md:items-center justify-between">
+        <div className="flex flex-col md:flex-row md:items-center justify-between"  id='appointment'>
           <div className="md:w-1/2 mb-10 md:mb-0">
             <h2 className="text-3xl font-bold mb-4">Book an <span className="text-primary">Appointment</span> online</h2>
             <p className="text-muted-foreground mb-4">At MediTail, we prioritize your health. Booking an appointment has never been easier. Our platform allows you to schedule visits with your healthcare provider at your convenience.</p>
