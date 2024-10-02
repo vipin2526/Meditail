@@ -50,7 +50,7 @@ export default function Header() {
             )}
             <Link to={'/consultation'} className="ml-4 bg-green-500 text-white hover:bg-green-600 px-4 py-2 rounded-md text-sm font-medium flex items-center">
              Free AI Consultation
-              <img hidden="true" alt="arrow-right" src="https://openui.fly.dev/openui/16x16.svg?text=→" className="ml-2" />
+              <img hidden={true} alt="arrow-right" src="https://openui.fly.dev/openui/16x16.svg?text=→" className="ml-2" />
             </Link>
           </div>
         </div>

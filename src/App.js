@@ -10,12 +10,14 @@ import Login from './components/Login';
 import Registration from './components/Registration';
 import Profile from './components/Profile';
 import Consultation from "./components/Consultation";
+import { Analytics } from "@vercel/analytics/react"
 
 
 function App() {
   document.title = 'MEDITAIL';
   return (
     <div className="App">
+      <Analytics />
       <Router >
         <Header />
         <div className='margin'>
